@@ -1,0 +1,1 @@
+Meteor.startup(function(){document.body.appendChild(Meteor.ui.render(Meteor._def_template(null,Handlebars.json_ast_to_func([[">","nav"]]))));});

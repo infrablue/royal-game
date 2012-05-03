@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/packages/bootstrap/css/bootstrap.css?2a6258b7936b2bb3ae53d8053e3cf2609cc4e24f">
+  <link rel="stylesheet" href="/packages/bootstrap/css/bootstrap-responsive.css?e3815257d0f7787f4eb0faae4ad36baeec8fc7b2">
+  <link rel="stylesheet" href="/packages/bootstrap/css/bootstrap-override.css?16c8dede4a82c6a4b5d788d80ff5e781f9dc7d45">
+  <link rel="stylesheet" href="/client/css/chess.css?9297ad4aa173c4e0c19aebd27c62a5c43242bb93">
+
+
+  <script type="text/javascript" src="/packages/underscore/underscore.js?772b2587aa2fa345fb760eff9ebe5acd97937243"></script>
+  <script type="text/javascript" src="/packages/meteor/client_environment.js?b157cf590c380de2b08e97439017132517a1ea4b"></script>
+  <script type="text/javascript" src="/packages/meteor/helpers.js?71d94de5b2e532dba62dcbf68be35f05d6ba7834"></script>
+  <script type="text/javascript" src="/packages/meteor/timers.js?751790703a2d75d770e3a46b896d1e2b6ebf2dab"></script>
+  <script type="text/javascript" src="/packages/meteor/dynamics_browser.js?0dba61d7ab17d06bcbbb8cc24d3ec2b8eab136c9"></script>
+  <script type="text/javascript" src="/packages/deps/deps.js?f8cf99fe4b1eaaf75f0f0df346ea65f11d49119b"></script>
+  <script type="text/javascript" src="/packages/logging/logging.js?5f773289bcb9ee3f536aad5718a21a0535e74c79"></script>
+  <script type="text/javascript" src="/packages/json/json2.js?b6fa2247d96bb52f6fd1be0e21414e71c8e6c8d0"></script>
+  <script type="text/javascript" src="/packages/reload/reload.js?cac55a0ffa49c38bd50778d41c16544afc81c6e0"></script>
+  <script type="text/javascript" src="/packages/session/session.js?1b357412ec4fbc237503bac28cba6596739607cc"></script>
+  <script type="text/javascript" src="/packages/uuid/uuid.js?c7e0f800b5fa9d7f9b93fd2b8861e299b7705917"></script>
+  <script type="text/javascript" src="/packages/stream/sockjs-0.3.1.js?27ec68fcb1bae07110fe8a009c3d5072ba317231"></script>
+  <script type="text/javascript" src="/packages/stream/stream_client.js?25e0b779305897cb9dba36af9375313f518c4e6c"></script>
+  <script type="text/javascript" src="/packages/minimongo/minimongo.js?18e700c18433ca8bd4d8e2a61d6bf4e0ca38e9c4"></script>
+  <script type="text/javascript" src="/packages/minimongo/selector.js?09077e929ee6a1f7b3d0fa87225580c0100e56ee"></script>
+  <script type="text/javascript" src="/packages/minimongo/sort.js?136c6aef9d5ee6e98cd3458e123f07b2dc97b0c4"></script>
+  <script type="text/javascript" src="/packages/minimongo/uuid.js?c7951b84520d018dc4c5c3345d3c6eda3aefafd5"></script>
+  <script type="text/javascript" src="/packages/minimongo/modify.js?bf153b2f3f4b1e7e7cb92b9ec45f33bf29470a19"></script>
+  <script type="text/javascript" src="/packages/minimongo/diff.js?b6eea41bc2810a57e5c9f2d3c1d31ccaaded0e2f"></script>
+  <script type="text/javascript" src="/packages/livedata/livedata_common.js?773a10abb9382b8c09f3fec5d093ae5c2312e405"></script>
+  <script type="text/javascript" src="/packages/livedata/livedata_connection.js?5191ebbdc16f67f6d333dff0e2a62004e7b088fb"></script>
+  <script type="text/javascript" src="/packages/livedata/client_convenience.js?451ecec19f4f66b3f08e280db5fc4f00f0472597"></script>
+  <script type="text/javascript" src="/packages/mongo-livedata/local_collection_driver.js?da7264171ea833248c328c5260b0c1cdd88505e4"></script>
+  <script type="text/javascript" src="/packages/mongo-livedata/collection.js?a198335f433bb7cd0e756fe36d902402206a0afa"></script>
+  <script type="text/javascript" src="/packages/jquery/jquery.js?0d7896e2bb23f88e26e52b22a075350b354df447"></script>
+  <script type="text/javascript" src="/packages/liveui/liverange.js?c8df60b4f2966d7c8f4322cb2cfdf58e53e1db3f"></script>
+  <script type="text/javascript" src="/packages/liveui/liveui.js?7705d92447d0c910781de856ef4ad622ae0cc301"></script>
+  <script type="text/javascript" src="/packages/liveui/innerhtml.js?33d8a9118c571c297862d1bc2b0098dd24123596"></script>
+  <script type="text/javascript" src="/packages/liveui/smartpatch.js?89c92b0add4e88657a2d07f0c0cd08ccfec959ca"></script>
+  <script type="text/javascript" src="/packages/templating/deftemplate.js?faaaa542ffa1357a99ffacebd8e9326fc20dd6b7"></script>
+  <script type="text/javascript" src="/packages/startup/startup_client.js?11f135cd7902c8bb2b6c2116f4c6b5b75e27162e"></script>
+  <script type="text/javascript" src="/packages/handlebars/evaluate.js?ba21f3444700db9b699a44973484887ddecbca27"></script>
+  <script type="text/javascript" src="/packages/past/past.js?113a23ab979bc394bb29f16cdec1b2d7e420de54"></script>
+  <script type="text/javascript" src="/packages/bootstrap/js/bootstrap.js?e62589021109c81e5c0fe1eac6f9cf7359038061"></script>
+  <script type="text/javascript" src="/client/templates/template.chess.js?be7bfe57c6ae36b8b7f6e9523f6a234ce609dc74"></script>
+  <script type="text/javascript" src="/client/templates/template.template.js?7d5584071b4785f518c65d2e99a675a9cda4bb8b"></script>
+  <script type="text/javascript" src="/client/js/chess.js?83cb4d4d5e18f13180a6103ff74ae10e06e985f8"></script>
+  <script type="text/javascript" src="/server.js?876872827711e3074799d1378e04e299986ec624"></script>
+
+
+
+  <title>Meteor Chess</title>
+
+</head>
+<body>
+
+</body>
+</html>
